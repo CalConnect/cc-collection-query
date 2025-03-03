@@ -1,0 +1,4 @@
+== Security Considerations
+
+This extension does not introduce any new security concerns beyond those already
+described in HTTP and WebDAV.

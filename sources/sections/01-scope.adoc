@@ -1,0 +1,8 @@
+== Scope
+
+//This document specifies an extension to Web Distributed Authoring and Versioning
+//(WebDAV) that enables clients to search for WebDAV collections based upon a set of
+//client-supplied criteria. This extension defines a new WebDAV report that allows
+//efficient discovery and filtering of collections, which is particularly useful in
+//environments with large numbers of collections or when clients need to find
+//collections with specific characteristics.

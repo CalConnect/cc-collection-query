@@ -1,0 +1,27 @@
+== References
+
+[bibliography]
+=== Normative References
+
+* [[[RFC2119,IETF RFC 2119]]]
+
+* [[[RFC3253,IETF RFC 3253]]]
+
+* [[[RFC3744,IETF RFC 3744]]]
+
+* [[[RFC4918,IETF RFC 4918]]]
+
+* [[[RFC5323,IETF RFC 5323]]]
+
+* [[[RFC7230,IETF RFC 7230]]]
+
+* [[[RFC8174,IETF RFC 8174]]]
+
+* [[[W3C.REC-xml-20081126,W3C.REC-xml-20081126]]], Bray, T., Paoli, J., Sperberg-McQueen, C., Maler, E., and F. Yergeau, "Extensible Markup Language (XML) 1.0 (Fifth Edition)", World Wide Web Consortium Recommendation REC-xml-20081126, November 2008.
+
+[bibliography]
+=== Informative References
+
+* [[[RFC4791,IETF RFC 4791]]]
+
+* [[[RFC6352,IETF RFC 6352]]]

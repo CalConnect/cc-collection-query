@@ -1,22 +1,21 @@
-= CalConnect Standard: (TITLE)
+= CalConnect Standard: Collection Query Report for Web Distributed Authoring and Versioning (WebDAV)
 
-This work item belongs to CalConnect (TCs).
+This work item belongs to CalConnect CALENDAR TC.
 
 image:https://github.com/CalConnect/cc-collection-query/workflows/generate/badge.svg["Build Status", link="https://github.com/CalConnect/cc-collection-query/actions?workflow=generate"]
 
 This document is available in its rendered forms here:
 
-* https://calconnect.github.io/cc-collection-query/[CalConnect: Calendaring and scheduling -- Vocabulary (HTML)]
+* https://calconnect.github.io/cc-collection-query/[Collection Query Report for Web Distributed Authoring and Versioning (WebDAV) (HTML)]
 
 == General
 
-This document specifies the (TITLE).
+This document specifies the 
 
 The document is published as the following:
 
-* CalConnect CC (DOCNUMBER)
-* ISO (DOCNUMBER)
-* IETF draft-cc-collection-query
+* CalConnect CC 51020
+* IETF draft-murchison-webdav-collection-query
 
 
 == Fetching the document
@@ -62,17 +61,6 @@ The generated documents are accessible under `_site/`.
 metanorma site generate --agree-to-terms
 open _site/index.html
 ----
-
-
-// == IETF: Checking against idnits
-
-// https://tools.ietf.org/tools/idnits/[idnits] is the RFC checking tool prior to
-// submissions.
-
-// [source,sh]
-// ----
-// idnits draft-calconnect-vobject-vformat.nits
-// ----
 
 
 == License
