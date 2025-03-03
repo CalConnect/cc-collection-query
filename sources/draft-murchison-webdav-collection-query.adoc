@@ -1,0 +1,49 @@
+= Collection Query Report for Web Distributed Authoring and Versioning (WebDAV)
+:doctype: internet-draft
+:name: draft-murchison-webdav-collection-query-00
+:abbrev: Collection Query
+:status: informational
+:ipr: trust200902
+:area: Applications and Real-Time
+:intended-series: full-standard
+:workgroup: Calendaring Extensions
+:keywords: WebDAV
+:published-date: 2019-05-30
+:fullname: Kenneth Murchison
+:lastname: Murchison
+:forename_initials: K.
+:affiliation: FastMail US LLC
+:email: murch@fastmailteam.com
+:contributor-uri: http://www.fastmail.com/
+:address: 1429 Walnut St, Suite 1201 + \
+Philadephia, PA 19102 + \
+United States of America
+:fullname_2: Michael Douglass
+:lastname_2: Douglass
+:forename_initials_2: M.
+:affiliation_2: Spherical Cow Group
+:email_2: mdouglass@sphericalcowgroup.com
+:contributor-uri_2: http://sphericalcowgroup.com
+:address_2: 226 3rd Street + \
+Troy, NY 12180 + \
+United States of America
+:mn-document-class: ietf
+:mn-output-extensions: xml,rfc,txt,html,rxl
+:local-cache-only:
+:data-uri-image:
+
+include::sections/00-abstract.adoc[]
+
+include::sections/01-introduction.adoc[]
+
+include::sections-ietf/03-conventions.adoc[]
+
+include::sections/04-querying.adoc[]
+
+include::sections/05-xml-elements.adoc[]
+
+include::sections/06-security.adoc[]
+
+include::sections/99-acknowledgments.adoc[]
+
+include::sections-ietf/99-references.adoc[]

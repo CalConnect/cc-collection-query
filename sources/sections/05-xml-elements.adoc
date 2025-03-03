@@ -1,0 +1,118 @@
+== XML Element Definitions
+
+[[collection-query]]
+=== DAV:collection-query XML Element
+
+Name:: collection-query
+Namespace:: DAV:
+Purpose:: WebDAV report used to search for collections matching certain criteria.
+Description:: See <<DAV-collection-query-report>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT collection-query (criteria, limit?, query-token?, prop) >
+<!-- DAV:limit defined in {{{<<RFC5323,section=5.17>>}}} -->
+<!-- DAV:prop defined in {{{<<RFC4918,section=14.18>>}}} -->
+----
+
+=== DAV:criteria XML Element
+
+Name:: criteria
+Namespace:: DAV:
+Purpose:: The criteria to use for the collection search.
+Description:: See <<Search-Criteria>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT criteria (terms) >
+----
+
+=== DAV:terms XML Element
+
+Name:: terms
+Namespace:: DAV:
+Purpose:: A set of search terms.
+Description:: See <<Search-Criteria>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT terms CDATA>
+<!-- Text MUST be a whitespace-separated list of terms -->
+----
+
+=== DAV:query-token XML Element
+
+Name:: query-token
+Namespace:: DAV:
+Purpose:: An opaque token provided by the server and returned by the client.
+Description:: See <<Truncation>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT query-token CDATA>
+<!-- Text MUST be a valid URI -->
+----
+
+=== DAV:multistatus XML Element
+
+Name:: multistatus
+Namespace:: DAV:
+Purpose:: Extends the DAV:multistatus element to include matching details.
+Description:: See <<DAV-collection-query-report>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT multistatus (response*, responsedescription?,
+                      query-token?, total-matches?) >
+<!-- DAV:multistatus originally defined in {{{<<RFC4918,section=14.16>>}}}
+     but overridden here to add the DAV:query-token
+     and DAV:total-matches elements -->
+<!-- DAV:responsedescription defined in {{{<<RFC4918,section=14.25>>}}} -->
+----
+
+=== DAV:response XML Element
+
+Name:: response
+Namespace:: DAV:
+Purpose:: Extends the DAV:response element to include matching details.
+Description:: See <<DAV-collection-query-report>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT response (href, ((href*, status)|(propstat+)),
+                   error?, responsedescription?, location?, score?) >
+<!-- DAV:response originally defined in {{{<<RFC4918,section=14.24>>}}}
+     but overridden here to add the DAV:score element -->
+<!-- DAV:href defined in {{{<<RFC4918,section=14.7>>}}} -->
+<!-- DAV:status defined in {{{<<RFC4918,section=14.28>>}}} -->
+<!-- DAV:propstat defined in {{{<<RFC4918,section=14.22>>}}} -->
+<!-- DAV:error defined in {{{<<RFC4918,section=14.5>>}}} -->
+<!-- DAV:responsedescription defined in {{{<<RFC4918,section=14.25>>}}} -->
+<!-- DAV:location defined in {{{<<RFC4918,section=14.9>>}}} -->
+----
+
+=== DAV:score XML Element
+
+Name:: score
+Namespace:: DAV:
+Purpose:: Indicates a relevancy score for the response.
+Description:: See <<DAV-collection-query-report>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT score CDATA>
+<!-- Text MUST be a floating point number between 0.0 and 1.0 -->
+----
+
+=== DAV:total-matches XML Element
+
+Name:: total-matches
+Namespace:: DAV:
+Purpose:: The total number of collections matching the query.
+Description:: See <<DAV-collection-query-report>>
+
+[source%unnumbered,xml]
+----
+<!ELEMENT total-matches CDATA>
+<!-- Text MUST be a non-negative integer -->
+----

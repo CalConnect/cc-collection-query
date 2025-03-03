@@ -1,0 +1,41 @@
+= Collection Query Report for Web Distributed Authoring and Versioning (WebDAV)
+:docnumber: 51020
+:status: working-draft
+:doctype: standard
+:edition: 1
+:copyright-year: 2019
+:revdate: 2019-05-30
+:language: en
+:technical-committee: CALENDAR
+:affiliation: FastMail US LLC
+:fullname: Kenneth Murchison
+:surname: Murchison
+:givenname: Kenneth
+:affiliation_2: Spherical Cow Group
+:fullname_2: Michael Douglass
+:surname_2: Douglass
+:givenname_2: Michael
+:mn-document-class: cc
+:mn-output-extensions: xml,html,pdf,rxl
+:local-cache-only:
+:data-uri-image:
+
+include::sections/00-abstract.adoc[]
+
+include::sections/01-introduction.adoc[]
+
+include::sections/01-scope.adoc[]
+
+include::sections/02-norm-refs.adoc[]
+
+include::sections/03-terms.adoc[]
+
+include::sections/04-querying.adoc[]
+
+include::sections/05-xml-elements.adoc[]
+
+include::sections/06-security.adoc[]
+
+include::sections/99-acknowledgments.adoc[]
+
+include::sections/99-bibliography.adoc[]
