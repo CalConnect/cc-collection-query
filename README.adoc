@@ -10,7 +10,7 @@ This document is available in its rendered forms here:
 
 == General
 
-This document specifies the 
+This document specifies the Collection Query Report for Web Distributed Authoring and Versioning (WebDAV).
 
 The document is published as the following:
 
