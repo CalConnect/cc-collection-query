@@ -1,4 +1,5 @@
 [acknowledgments]
 == Acknowledgments
 
-This document came about via discussions at the Calendaring and Scheduling Consortium.
+This document came about via discussions at the Calendaring and Scheduling
+Consortium.
