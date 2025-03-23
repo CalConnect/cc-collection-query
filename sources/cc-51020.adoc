@@ -30,6 +30,8 @@ include::sections/02-norm-refs.adoc[]
 
 include::sections/03-terms.adoc[]
 
+include::sections/03-conventions.adoc[]
+
 include::sections/04-querying.adoc[]
 
 include::sections/05-xml-elements.adoc[]

@@ -36,7 +36,7 @@ include::sections/00-abstract.adoc[]
 
 include::sections/01-introduction.adoc[]
 
-include::sections-ietf/03-conventions.adoc[]
+include::sections/03-conventions.adoc[]
 
 include::sections/04-querying.adoc[]
 

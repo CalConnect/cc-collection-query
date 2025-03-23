@@ -1,6 +1,6 @@
 [abstract]
 == Abstract
 
-This specification defines an extension to Web Distributed
-Authoring and Versioning (WebDAV) to search for WebDAV
-collections based upon a set of client-supplied criteria.
+This specification defines an extension to Web Distributed Authoring and
+Versioning (WebDAV) to search for WebDAV collections based upon a set of
+client-supplied criteria.

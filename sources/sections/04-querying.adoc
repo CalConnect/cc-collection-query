@@ -2,13 +2,14 @@
 
 === Overview
 
-WebDAV <<RFC4918>> defines the concept of 'collections', which are hierarchical groupings of
-WebDAV resources on an HTTP <<RFC7230>> server. Collections can be of arbitrary size and depth
-(i.e., collections within collections). A WebDAV client may only be interested in
-resources contained in a subset of all of the collections on a server.
+WebDAV <<RFC4918>> defines the concept of 'collections', which are hierarchical
+groupings of WebDAV resources on an HTTP <<RFC7230>> server. Collections can be
+of arbitrary size and depth (i.e., collections within collections). A WebDAV
+client may only be interested in resources contained in a subset of all of the
+collections on a server.
 
-This specification defines a new WebDAV report that allows a client to search for
-collections based on a set of criteria.
+This specification defines a new WebDAV report that allows a client to search
+for collections based on a set of criteria.
 
 [[DAV-collection-query-report]]
 === DAV:collection-query Report
@@ -17,28 +18,25 @@ If the DAV:collection-query report is implemented by a WebDAV server, then the
 server MUST list the report in the "DAV:supported-report-set" property on any
 collection that can be queried.
 
-Marshalling:: The request-URI MUST identify a collection. The request body MUST be a
-DAV:collection-query XML element (see <<collection-query>>)), which MUST contain one DAV:criteria XML element
-and one DAV:prop XML element, and MAY contain a DAV:limit XML element and/or a
-DAV:query-token XML element.
+Marshalling:: The request-URI MUST identify a collection. The request body MUST
+be a DAV:collection-query XML element (see <<collection-query>>)), which MUST
+contain one DAV:criteria XML element and one DAV:prop XML element, and MAY
+contain a DAV:limit XML element and/or a DAV:query-token XML element.
 +
-The response body for a successful request MUST be a DAV:multistatus XML element,
-which MUST contain one DAV:response element for each collection that matches the
-search criteria and MAY contain a DAV:query-token XML element and/or a
-DAV:total-matches XML element. Each response MAY contain one DAV:score XML element
-indicating the relevancy of the response to the search criteria. A given collection
-URL MUST appear only once in the response.
+The response body for a successful request MUST be a DAV:multistatus XML
+element, which MUST contain one DAV:response element for each collection that
+matches the search criteria and MAY contain a DAV:query-token XML element and/or
+a DAV:total-matches XML element. Each response MAY contain one DAV:score XML
+element indicating the relevancy of the response to the search criteria. A given
+collection URL MUST appear only once in the response.
 
 Preconditions::
 
-Postconditions:: (DAV:number-of-matches-within-limits):
-The number of collections reported in the response must
-fall within the client-specified limit.
-This condition might be triggered if a client requests a
-limit on the number of responses
-(as per <<limiting>>), but the server is
-unable to truncate the result set at or below that
-limit.
+Postconditions:: (DAV:number-of-matches-within-limits): The number of
+collections reported in the response must fall within the client-specified
+limit. This condition might be triggered if a client requests a limit on the
+number of responses (as per <<limiting>>), but the server is unable to truncate
+the result set at or below that limit.
 
 [[Search-Criteria]]
 === Search Criteria
@@ -48,32 +46,32 @@ limit.
 [[Truncation]]
 === Truncation of Results
 
-A server MAY limit the number of member URLs in a response, for example, to limit
-the amount of work expended in processing a request, or as the result of an explicit
-limit set by the client. If the result set is truncated, the response MUST use
-status code 207 (Multi-Status), return a DAV:multistatus response body, and indicate
-a status of 507 (Insufficient Storage) for the request-URI. That DAV:response
-element SHOULD include a DAV:error element with the
-DAV:number-of-matches-within-limits precondition, as
-defined in <<RFC3744,section=9.2>>.
-DAV:response elements for all the collections being reported
-are also included.
+A server MAY limit the number of member URLs in a response, for example, to
+limit the amount of work expended in processing a request, or as the result of
+an explicit limit set by the client. If the result set is truncated, the
+response MUST use status code 207 (Multi-Status), return a DAV:multistatus
+response body, and indicate a status of 507 (Insufficient Storage) for the
+request-URI. That DAV:response element SHOULD include a DAV:error element with
+the DAV:number-of-matches-within-limits precondition, as defined in
+<<RFC3744,section=9.2>>. DAV:response elements for all the collections being
+reported are also included.
 
 When truncation occurs, the DAV:query-token value returned in the response MUST
-represent the correct state for the partial set of results returned. That allows the
-client to use the returned DAV:query-token to fetch the next set of results. In this
-way, the client can effectively "page" through the entire set of results in a
-consistent manner.
+represent the correct state for the partial set of results returned. That allows
+the client to use the returned DAV:query-token to fetch the next set of results.
+In this way, the client can effectively "page" through the entire set of results
+in a consistent manner.
 
-Clients MUST handle the 507 status on the request-URI in the response to the report.
+Clients MUST handle the 507 status on the request-URI in the response to the
+report.
 
 [[limiting]]
 === Limiting Results
 
-A client can limit the number of results returned by the server through use of the
-DAV:limit element (<<RFC5323,section=5.17>>) in the request body. This is useful
-when clients have limited space or bandwidth for the results. If a server is unable
-to truncate the result at or below the requested number, then it MUST fail the
-request with a DAV:number-of-matches-within-limits postcondition error. When the
-results can be correctly limited by the server, the server MUST follow the rules
-above for indicating a result set truncation to the client.
+A client can limit the number of results returned by the server through use of
+the DAV:limit element (<<RFC5323,section=5.17>>) in the request body. This is
+useful when clients have limited space or bandwidth for the results. If a server
+is unable to truncate the result at or below the requested number, then it MUST
+fail the request with a DAV:number-of-matches-within-limits postcondition error.
+When the results can be correctly limited by the server, the server MUST follow
+the rules above for indicating a result set truncation to the client.
