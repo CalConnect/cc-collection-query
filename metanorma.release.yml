@@ -1,3 +1,5 @@
+# metanorma.release.yml — cc-collection-query
+
 documents:
-  - source: sources/cc-51020.adoc
-  - source: sources/draft-murchison-webdav-collection-query.adoc
+  - pattern: "cc-*"
+    channels: [public/standards]
