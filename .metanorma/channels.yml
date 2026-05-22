@@ -1,5 +1,0 @@
-# .metanorma/channels.yml — cc-collection-query
-
-channels:
-  - name: public/standards
-    description: "CalConnect documents from cc-collection-query"
